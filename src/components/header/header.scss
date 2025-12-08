@@ -27,24 +27,10 @@
     color: #ffffff;
   }
 
-  &__select {
-    width: 90px;
-    padding: 15px 20px;
-    border: none;
-    outline: none;
-    border-radius: 50px;
-    background-color: #484848;
-  }
 
-  select {
-    -webkit-appearance: none; /* For Chrome, Safari, Opera */
-    -moz-appearance: none; /* For Firefox */
-    appearance: none; /* Standard property */
-  }
 
-  select::-ms-expand {
-    display: none;
-  }
+
+ 
 }
 
 @media (max-width: 800px) {
@@ -100,7 +86,7 @@
     width: 100%;
 
     & img {
-      margin-top: 100px;
+      margin-top: 50px;
       max-height: 400px;
       max-width: 800px;
     }
@@ -240,7 +226,7 @@
       // left: -20%;
       // margin-right: 0px;
       // margin-left: 0px;
-      margin-top: -20px;
+      margin-top: -0px;
       width: 100%;
     }
 
@@ -316,9 +302,8 @@
       position: relative;
       left: 0%;
       width: 100%;
-      // margin-right: 0px;
-      // margin-left: 0px;
-      margin-top: -20px;
+   
+      margin-top: 0px;
     }
 
     &__img {

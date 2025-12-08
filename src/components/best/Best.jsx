@@ -5,7 +5,9 @@ import "./best.scss";
 
 // --- ANIMATSIYA VARIANTLARI ---
 
-// 1. Umumiy Konteyner (Ro'yxat elementlari uchun Stagger)
+/**
+ * Umumiy Konteyner (Ro'yxat elementlari uchun Stagger)
+ */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -17,7 +19,9 @@ const containerVariants = {
   },
 };
 
-// 2. Ro'yxatdagi alohida elementlar
+/**
+ * Ro'yxatdagi alohida elementlar uchun animatsiya
+ */
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -30,7 +34,9 @@ const itemVariants = {
   },
 };
 
-// 3. Rasm va SVG uchun Animatsiya (Chap qism)
+/**
+ * Rasm va SVG uchun Animatsiya (Chap qism)
+ */
 const leftSideVariants = {
   hidden: { x: -100, opacity: 0 },
   visible: {
@@ -40,14 +46,16 @@ const leftSideVariants = {
   },
 };
 
-// 4. SVG ichidagi RECT elementlari uchun aylanma variantlar
-const rectRotateVariants = (direction) => ({
+/**
+ * Rasmni cheksiz aylantirish variantlari (avvalgi rectRotateVariants ishlatiladi)
+ */
+const rotateVariants = (direction) => ({
   rotate: direction === "right" ? 360 : -360,
   transition: {
     duration: 30,
     ease: "linear",
     repeat: Infinity,
-    delay: Math.random() * 5, // Tasodifiy kechikish
+    delay: Math.random() * 5,
   },
 });
 
@@ -63,6 +71,7 @@ const Best = () => {
         Dermozil - Tirnoq zamburug‘iga qarshi eng yaxshi vosita, tarkibida:
       </h2>
       <div className="best__bottom">
+        {/* CHAP QISM (Rasm va Aylanuvchi fon) */}
         <motion.div className="best__left" variants={leftSideVariants}>
           <img
             className="best__img"
@@ -70,82 +79,17 @@ const Best = () => {
             alt="Dermozil mahsuloti"
           />
 
-          <motion.svg
-            className="best__svg"
-            width="446"
-            height="571"
-            viewBox="0 0 446 571"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            // SVG'ga global animatsiya o'rnatilmaydi, faqat uning ichidagi <rect> animatsiya qilinadi
-          >
-            <motion.rect
-              initial={{ rotate: 0 }}
-              animate={rectRotateVariants("right")}
-              opacity="0.14"
-              x="446.006"
-              y="164.496"
-              width="205"
-              height="131"
-              rx="20"
-              transform="rotate(164.933 446.006 164.496)"
-              fill="#ccc"
-            />
-            <motion.rect
-              initial={{ rotate: 0 }}
-              animate={rectRotateVariants("left")}
-              opacity="0.14"
-              x="-69"
-              y="440.505"
-              width="205"
-              height="131"
-              transform="rotate(-7.14688 -69 440.505)"
-              fill="#ccc"
-            />
-            <motion.rect
-              initial={{ rotate: 0 }}
-              animate={rectRotateVariants("right")}
-              opacity="0.14"
-              x="96.0648"
-              width="144"
-              height="275"
-              transform="rotate(38.4663 96.0648 0)"
-              fill="#ccc"
-            />
-            <motion.rect
-              initial={{ rotate: 0 }}
-              animate={rectRotateVariants("left")}
-              opacity="0.14"
-              x="151.352"
-              y="169"
-              width="164"
-              height="272"
-              transform="rotate(51.3253 151.352 169)"
-              fill="#ccc"
-            />
-            <motion.rect
-              initial={{ rotate: 0 }}
-              animate={rectRotateVariants("right")}
-              opacity="0.14"
-              width="164"
-              height="272"
-              transform="matrix(0.108036 -0.994147 -0.994147 -0.108036 366.763 554.217)"
-              fill="#ccc"
-            />
-            <motion.rect
-              initial={{ rotate: 0 }}
-              animate={rectRotateVariants("left")}
-              opacity="0.14"
-              x="320.485"
-              y="193"
-              width="143.7"
-              height="179.358"
-              transform="rotate(41.3459 320.485 193)"
-              fill="#ccc"
-            />
-          </motion.svg>
+          {/* Yangi rasm tegi aylanma animatsiya bilan almashtirildi */}
+          <motion.img
+            className="best__svg" // CSS stillari saqlanadi
+            src="/tree.svg"
+            alt="Dekorativ fon rasmi"
+            initial={{ rotate: 0 }}
+            animate={rotateVariants("left")} // Masalan, chapga aylanish
+          />
         </motion.div>
 
+        {/* O'NG QISM (Tarkib elementlari) */}
         <motion.div className="best__right" variants={containerVariants}>
           <motion.div className="best__items" variants={itemVariants}>
             <img src="./images/best-imgs-1.png" alt="Triklozan tarkibi" />

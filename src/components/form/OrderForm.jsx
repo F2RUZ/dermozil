@@ -144,7 +144,7 @@ const OrderForm = ({ onCloseModal }) => {
       setTimeout(() => {
         setIsSuccess(false);
         if (onCloseModal) {
-          onCloseModal(); 
+          onCloseModal();
         }
       }, 3000);
     }, 2000);
