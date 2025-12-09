@@ -7,8 +7,18 @@ html {
   padding: 0;
 }
 
+.swiper__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper__form__text {
+  right: 45px;
+}
+
 .sale {
-  --card-gap: 120px;
+  --card-gap: 20px;
 
   @include display();
   @include paddingD(30px);
@@ -97,6 +107,16 @@ html {
 
 @media (max-width: 500px) {
   .sale {
-    @include paddingP(20px);
+    @include paddingP(0px);
+    --card-gap: 70px;
+  }
+
+  .sale__item-image {
+    // width: 120% !important;
+    transform: scale(1.2);
+  }
+
+  .swiper__form__text {
+    right: -25px;
   }
 }

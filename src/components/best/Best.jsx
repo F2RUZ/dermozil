@@ -66,7 +66,6 @@ const Best = () => {
     <motion.section
       className="best"
       initial="hidden"
-      // whileInView, Framer Motion ning eng samarali usullaridan biri.
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
     >
@@ -74,7 +73,6 @@ const Best = () => {
         Dermozil - Tirnoq zamburug‘iga qarshi eng yaxshi vosita, tarkibida:
       </h2>
       <div className="best__bottom">
-        {/* CHAP QISM (Rasm va Aylanuvchi fon) */}
         <motion.div className="best__left" variants={leftSideVariants}>
           <img
             className="best__img"
@@ -86,16 +84,10 @@ const Best = () => {
             className="best__svg"
             src="/tree.svg"
             alt="Dekorativ fon rasmi"
-            initial={{ rotate: 0 }}
-            animate={rotateVariants("left")}
           />
         </motion.div>
 
-        {/* O'NG QISM (Tarkib elementlari) */}
         <motion.div className="best__right" variants={containerVariants}>
-          {/* Itemlarni takroriy yozish o'rniga massivdan foydalanish eng yaxshi yo'l, 
-             lekin mavjud format saqlandi. */}
-
           <motion.div className="best__items" variants={itemVariants}>
             <img src="./images/best-imgs-1.png" alt="Triklozan tarkibi" />
             <p className="best__items-text">

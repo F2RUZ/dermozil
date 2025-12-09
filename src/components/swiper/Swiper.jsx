@@ -3,9 +3,9 @@ import React, {
   useRef,
   useEffect,
   useState,
-  memo, // ✅ memo import qilindi
-  lazy, // ✅ lazy import qilindi
-  Suspense, // ✅ Suspense import qilindi
+  memo,
+  lazy,
+  Suspense,
 } from "react";
 import {
   motion,
@@ -16,15 +16,12 @@ import {
 } from "framer-motion";
 import "./swiper.scss";
 
-// 1. ✅ OrderForm komponentini dinamik import qilish
 const LazyOrderForm = lazy(() => import("../form/OrderForm"));
 
 const videoUrl =
   "https://cdn.shopify.com/videos/c/o/v/b39d139978eb498fa1f52be8261cdfbb.mp4";
 
-// Ma'lumotlar statik bo'lgani uchun, ularni komponent tashqarisida qoldirish yaxshi amaliyot.
 const initialCardData = [
-  // ... ma'lumotlar o'zgarishsiz qoldi
   {
     id: 1,
     name: "Dildora - 32 yosh",
@@ -70,7 +67,6 @@ const cardData = [
 ];
 
 const Swiper = () => {
-  // ✅ Komponent memo bilan o'raldi
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -80,9 +76,8 @@ const Swiper = () => {
   const swiperControls = useAnimation();
   const x = useMotionValue(0);
 
-  // Kenglik hisoblashni soddalashtiramiz va debounce qilamiz
   const [totalScrollWidth, setTotalScrollWidth] = useState(0);
-  const [isAnimationRunning, setIsAnimationRunning] = useState(false); // Animatsiya holatini nazorat qilish
+  const [isAnimationRunning, setIsAnimationRunning] = useState(false);
 
   const titleVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -174,7 +169,7 @@ const Swiper = () => {
       </motion.h2>
 
       <motion.div
-        className="intro__form "
+        className="intro__form  swiper__form"
         initial={{ y: 20, opacity: 0 }}
         whileInView={{
           y: 0,
@@ -192,7 +187,7 @@ const Swiper = () => {
         >
           Buyurtma berish
         </motion.button>
-        <p className="intro__bottom-form-text">50% chegirma</p>
+        <p className="intro__bottom-form-text swiper__form__text">50% chegirma</p>
       </motion.div>
 
       <div className="sale__swiper-wrapper">
@@ -201,24 +196,14 @@ const Swiper = () => {
           ref={containerRef}
           animate={swiperControls}
           style={{ x }}
-          // Katta elementlarda whileInView/initial animatsiyasini olib tashladim,
-          // chunki asosiy animatsiya doimiy ishlaydi va ular keraksiz yuk bo'lishi mumkin.
         >
           {cardData.map((card) => (
             <motion.div key={card.uniqueId} className="sale__items">
-              {/* Sizning kartochka tarkibi kiritilmagan, faqat SVG bor. 
-                 Agar rasm va matn bo'lsa, ularni render qilish muhim. */}
-
-              {/* Foydalanuvchi fikri kontenti qo'shilishi kerak edi, 
-                 lekin hozirda faqat SVG bor. Stillarga bog'liq. */}
               <img
                 src="/comment.svg"
                 alt="Foydalanuvchi fikri fon rasmi"
                 className="sale__item-image"
               />
-
-              {/* Eslatma: Asl kartochka ma'lumotlari (`card.name`, `card.text`, `card.img1`, `card.img2`) 
-                 bu yerda ishlatilmagan. Ular qo'shilishi kerak. */}
             </motion.div>
           ))}
         </motion.div>
@@ -275,7 +260,6 @@ const Swiper = () => {
                 &times;
               </button>
 
-              {/* 2. ✅ LazyOrderForm va Suspense ishlatildi */}
               <Suspense fallback={<div>Yuklanmoqda...</div>}>
                 <LazyOrderForm onCloseModal={closeModal} />
               </Suspense>
