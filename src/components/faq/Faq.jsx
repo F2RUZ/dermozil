@@ -212,7 +212,7 @@ const Faq = () => {
         </motion.div>
 
         <motion.div
-          className="intro__form "
+          className="intro__form  swiper__form"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{
             y: 0,
@@ -230,7 +230,9 @@ const Faq = () => {
           >
             Buyurtma berish
           </motion.button>
-          <p className="intro__bottom-form-text">50% chegirma</p>
+          <p className="intro__bottom-form-text swiper__form__text">
+            50% chegirma
+          </p>
         </motion.div>
       </motion.section>
 
