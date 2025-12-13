@@ -75,8 +75,9 @@ const Best = () => {
       <div className="best__bottom">
         <motion.div className="best__left" variants={leftSideVariants}>
           <img
+            
             className="best__img"
-            src="./images/best-main-img.png"
+            src="./with.png"
             alt="Dermozil mahsuloti"
           />
 

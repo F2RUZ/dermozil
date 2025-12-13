@@ -26,28 +26,28 @@ const initialCardData = [
     id: 1,
     name: "Dildora - 32 yosh",
     text: "Meni anchadan beri bu muammo qiynab kelar edi. Har xil vositalarni qo‘llab ko‘rdim biroq foyda bermadi... Bir tanishim “Dermozil” keremini taklif qildi. Yana bir bor oyoq zamburug‘idan xalos bo‘lishga urinib ko‘dim. Bir haftadan so‘ng tirnoqlarim avvalgi sog‘lom ko‘rinishiga qaytdi.",
-    img1: "./images/sale-cards-1-bottom.png",
+    img1: "./javoh.svg",
     img2: "./images/sale-cards-1-top.png",
   },
   {
     id: 2,
     name: "Sarvar - 28 yosh",
     text: "Zamburug' sababli yozda ochiq poyabzal kiyishga uyalardim. Bu kremni ishlatganimdan so'ng, atigi 10 kun ichida katta natijani ko'rdim. Endi tirnoqlarim toza va sog'lom!",
-    img1: "./images/sale-cards-2-bottom.png",
+    img1: "./Murod.svg",
     img2: "./images/sale-cards-2-top.png",
   },
   {
     id: 3,
     name: "Fotima - 45 yosh",
     text: "Uzoq yillar davomida kurashdim. Dermozil boshqa sinab ko'rgan dorilarimdan farq qildi. Ta'siri tez va doimiy bo'ldi. Hammaga tavsiya qilaman.",
-    img1: "./images/sale-cards-3-bottom.png",
+    img1: "./saodat.svg",
     img2: "./images/sale-cards-3-top.png",
   },
   {
     id: 4,
     name: "Jasur - 35 yosh",
     text: "Sport bilan shug'ullanganim uchun tez-tez bu muammoga duch kelardim. Bu kremdan foydalanish oson va natijasi darhol seziladi. Endi profilaktika uchun ham qo'llayman.",
-    img1: "./images/sale-cards-4-bottom.png",
+    img1: "./comment.svg",
     img2: "./images/sale-cards-4-top.png",
   },
 ];
@@ -70,8 +70,8 @@ const mobileSwiperData = [
     id: 1,
     name: "Dildora - 32 yosh",
     text: "Meni anchadan beri bu muammo qiynab kelar edi. Har xil vositalarni qo‘llab ko‘rdim biroq foyda bermadi. Bir tanishim “Dermozil” kremini taklif qildi. Yana bir bor oyoq zamburug‘idan xalos bo‘lishga urinib ko‘dim. Bir haftadan so‘ng tirnoqlarim avvalgi sog‘lom ko‘rinishiga qaytdi. Natijadan juda xursandman. Ushbu mahsulotni tavsiya qilaman.",
-    img1: "/healt.svg",
-    img2: "/worth.svg",
+    img1: "/worth.svg",
+    img2: "/healt.svg",
     img3: "/smile.svg",
     img4: "/collapse_dermo.svg",
     img5: "/flacon-dermo.svg",
@@ -80,8 +80,8 @@ const mobileSwiperData = [
     id: 2,
     name: "Sarvar - 28 yosh",
     text: "Zamburug' sababli yozda ochiq poyabzal kiyishga uyalardim. Bu muammo ko'pdan beri bor edi. Dermozil kremni ishlatganimdan so'ng, atigi 10 kun ichida katta natijani ko'rdim. Oldin qancha dorilarni ishlatdim, foydasi bo'lmagandi. Endi tirnoqlarim toza va sog'lom. Men kabi muammoingiz bo'lsa, albatta sinab ko'ring.",
-    img1: "/healt.svg",
-    img2: "/worth.svg",
+    img1: "/MurodLeftLeg.svg",
+    img2: "/MurodLeftright.svg",
     img3: "/smile.svg",
     img4: "/collapse_dermo.svg",
     img5: "/flacon-dermo.svg",
@@ -90,8 +90,8 @@ const mobileSwiperData = [
     id: 3,
     name: "Fotima - 45 yosh",
     text: "Uzoq yillar davomida kurashdim, har xil usullarni qo'lladim, lekin faqatgina vaqtincha yordam berardi. Dermozil boshqa sinab ko'rgan dorilarimdan mutlaqo farq qildi. Ta'siri tez va doimiy bo'ldi. Nihoyat, oyoqlarim yengillashdi va estetik ko'rinishi yaxshilandi. Doimiy samarasi uchun hammaga tavsiya qilaman.",
-    img1: "/healt.svg",
-    img2: "/worth.svg",
+    img1: "/saodatLeftLeg.svg",
+    img2: "/saodatrightLeg.svg",
     img3: "/smile.svg",
     img4: "/collapse_dermo.svg",
     img5: "/flacon-dermo.svg",
@@ -100,8 +100,8 @@ const mobileSwiperData = [
     id: 4,
     name: "Jasur - 35 yosh",
     text: "Sport bilan shug'ullanganim uchun tez-tez bu muammoga duch kelardim. Oyoqlarimda qichishish va tirnoqlarimda o'zgarishlar sezilardi. Bu kremdan foydalanish oson va natijasi darhol seziladi. Avvalgilariga nisbatan ancha samarali ekan. Endi uni profilaktika uchun ham qo'llayman. Juda qoniqarli natija!",
-    img1: "/healt.svg",
-    img2: "/worth.svg",
+    img1: "/javohirLeft.svg",
+    img2: "/javohirRight.svg",
     img3: "/smile.svg",
     img4: "/collapse_dermo.svg",
     img5: "/flacon-dermo.svg",
@@ -268,7 +268,7 @@ const Swiper = () => {
           {cardData.map((card) => (
             <motion.div key={card.uniqueId} className="sale__items">
               <img
-                src="/comment.svg"
+                src={card.img1}
                 alt="Foydalanuvchi fikri fon rasmi"
                 className="sale__item-image"
               />
