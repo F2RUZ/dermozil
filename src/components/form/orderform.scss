@@ -32,37 +32,6 @@
   min-height: 500px;
 }
 
-.products-image {
-  max-width: 30%;
-  position: relative;
-  height: 350px;
-  min-width: 200px;
-
-  img {
-    position: absolute;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-
-  img:nth-child(1) {
-    top: 0;
-    left: 0;
-    transform: rotate(-15deg);
-    z-index: 1;
-    max-width: 150px;
-  }
-
-  img:nth-child(2) {
-    top: 30px;
-    right: 0;
-    transform: rotate(5deg);
-    z-index: 2;
-    max-width: 150px;
-  }
-}
-
 .gift-box {
   max-width: 30%;
   position: relative;
@@ -155,7 +124,6 @@
     transform: rotate(-10deg);
   }
 }
-
 
 .notification-container {
   position: fixed;
@@ -278,4 +246,38 @@
 
 .btn {
   width: 200px !important;
+}
+
+.products-image {
+  max-width: 30%;
+  position: relative;
+  height: 350px;
+  min-width: 200px;
+
+  img {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  img:nth-child(1) {
+    top: 100px;
+    left: 0;
+    z-index: 44;
+    max-width: 200px;
+  }
+
+  img:nth-child(2) {
+    top: -60px;
+    right: 0;
+    transform: rotate(5deg);
+    z-index: 2;
+    max-width: 150px;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 }

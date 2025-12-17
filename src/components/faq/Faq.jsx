@@ -2,7 +2,6 @@
 import React, {
   useState,
   useRef,
-  memo, // ✅ memo import qilindi
   lazy, // ✅ lazy import qilindi
   Suspense, // ✅ Suspense import qilindi
 } from "react";
@@ -186,10 +185,9 @@ const Faq = () => {
             variants={itemVariants}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <img
-              src="./images/often-questions-img.png"
+            <motion.img
+              src="/offen.png"
               alt="Ayolning oyoqlarini davolash"
-
               className="woman__images"
             />
             <div className="often__right-box">
@@ -244,7 +242,6 @@ const Faq = () => {
             transition={{ duration: 0.3 }}
             onClick={closeModal}
           >
-            {/* Modal kontenti konteyneri */}
             <motion.div
               className="modal-content"
               initial={{ y: -50, opacity: 0 }}
@@ -253,12 +250,10 @@ const Faq = () => {
               transition={{ duration: 0.4 }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Yopish tugmasi */}
               <button className="modal-close" onClick={closeModal}>
                 &times;
               </button>
 
-              {/* 2. ✅ LazyOrderForm va Suspense ishlatildi */}
               <Suspense fallback={<div>Yuklanmoqda...</div>}>
                 <LazyOrderForm onCloseModal={closeModal} />
               </Suspense>
@@ -270,5 +265,4 @@ const Faq = () => {
   );
 };
 
-// 3. ✅ Komponentni memo bilan o'rash
-export default memo(Faq);
+export default Faq;

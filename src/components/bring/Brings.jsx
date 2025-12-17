@@ -4,7 +4,6 @@ import React, { useRef, useState, memo, lazy, Suspense } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import "./brings.scss";
 
-// 1. ✅ OrderForm komponentini React.lazy orqali dinamik import qilish
 const LazyOrderForm = lazy(() => import("../form/OrderForm"));
 
 const VIDEO_URL_BRINGS_LEFT =
@@ -19,7 +18,6 @@ const Brings = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.5 });
 
-  // Animatsiya variantlari (o'zgarishsiz, chunki ular allaqachon yaxshi optimallashtirilgan)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -64,8 +62,6 @@ const Brings = () => {
       },
     },
   };
-
-
 
   return (
     <div className={`wrapper ${isModalOpen ? "modal-open" : ""}`}>
@@ -176,5 +172,4 @@ const Brings = () => {
   );
 };
 
-// 3. ✅ Komponentni React.memo bilan o'rash
-export default memo(Brings);
+export default Brings;

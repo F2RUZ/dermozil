@@ -1,4 +1,3 @@
-// src/components/Effect/Effect.jsx
 "use client";
 
 import React, { useRef, memo } from "react"; // ✅ memo import qilindi
@@ -6,21 +5,15 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import "./effect.scss";
 
-// Komponentni memo bilan o'raymiz
 const Effect = () => {
-  // ✅ memo bilan o'raldi
   const sectionRef = useRef(null);
-  // useInView holati (isInView) prop emas, balki komponent ichidagi holatga bog'liq,
-  // shuning uchun memo bu yerda keraksiz renderlashni oldini olishga yordam beradi.
   const isInView = useInView(sectionRef, { once: true, amount: 0.5 });
 
-  // Sarlavha variantlari
   const titleVariants = {
     hidden: { y: -30, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
   };
 
-  // Kartochkalar konteyneri variantlari (Staggered)
   const containerVariants = {
     hidden: {},
     visible: {
@@ -31,7 +24,6 @@ const Effect = () => {
     },
   };
 
-  // Kartochka kirish animatsiyasi (Pastdan ko'tarilish)
   const itemVariants = {
     hidden: { y: 50, opacity: 0, scale: 0.95 },
     visible: {
@@ -45,17 +37,13 @@ const Effect = () => {
     },
   };
 
-  // Hover/Active variantlari (Yuqoriga ko'tarilish va silliq soya/chegara)
   const cardInteractive = {
-    // 1. Hover: Yuqoriga ko'tarilish va silliq soya
     whileHover: {
       y: -5,
-      // BoxShadow GPU tomonidan optimallashtirilgan bo'lmasa-da, framer-motion yaxshi boshqaradi.
       boxShadow:
         "0 15px 30px rgba(255, 105, 180, 0.4), 0 0 0 2px rgba(255, 105, 180, 0.5)",
       transition: { type: "spring", stiffness: 300, damping: 15 },
     },
-    // 2. Active (bosilganda): Ichkariga bosilish effekti
     whileTap: {
       scale: 0.98,
       y: 0,
@@ -77,7 +65,6 @@ const Effect = () => {
         </motion.h2>
 
         <motion.div className="effect__cards" variants={containerVariants}>
-          {/* 1-kartochka */}
           <motion.div
             className="effect__items"
             variants={itemVariants}
@@ -89,7 +76,7 @@ const Effect = () => {
               style={{ position: "relative", height: "150px" }}
             >
               <Image
-                src="/images/effect-1.png"
+                src="/couseone.png"
                 alt="Yoqimsiz hid"
                 fill
                 style={{ objectFit: "contain" }}
@@ -101,7 +88,6 @@ const Effect = () => {
             </p>
           </motion.div>
 
-          {/* 2-kartochka */}
           <motion.div
             className="effect__items"
             variants={itemVariants}
@@ -113,7 +99,7 @@ const Effect = () => {
               style={{ position: "relative", height: "150px" }}
             >
               <Image
-                src="/images/effect-2.png"
+                src="/cousetwo.png"
                 alt="Tirnoq og‘rig‘i va quruqlik"
                 fill
                 style={{ objectFit: "contain" }}
@@ -125,7 +111,6 @@ const Effect = () => {
             </p>
           </motion.div>
 
-          {/* 3-kartochka */}
           <motion.div
             className="effect__items"
             variants={itemVariants}
@@ -137,7 +122,7 @@ const Effect = () => {
               style={{ position: "relative", height: "150px" }}
             >
               <Image
-                src="/images/effect-3.png"
+                src="/cousetree.png"
                 alt="Tirnoq plastinkalarining qorayishi"
                 fill
                 style={{ objectFit: "contain" }}
@@ -154,4 +139,4 @@ const Effect = () => {
   );
 };
 
-export default memo(Effect);
+export default Effect;

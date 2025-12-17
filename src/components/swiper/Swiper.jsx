@@ -26,28 +26,28 @@ const initialCardData = [
     id: 1,
     name: "Dildora - 32 yosh",
     text: "Meni anchadan beri bu muammo qiynab kelar edi. Har xil vositalarni qo‘llab ko‘rdim biroq foyda bermadi... Bir tanishim “Dermozil” keremini taklif qildi. Yana bir bor oyoq zamburug‘idan xalos bo‘lishga urinib ko‘dim. Bir haftadan so‘ng tirnoqlarim avvalgi sog‘lom ko‘rinishiga qaytdi.",
-    img1: "./javoh.svg",
+    img1: "/javohir.png",
     img2: "./images/sale-cards-1-top.png",
   },
   {
     id: 2,
     name: "Sarvar - 28 yosh",
     text: "Zamburug' sababli yozda ochiq poyabzal kiyishga uyalardim. Bu kremni ishlatganimdan so'ng, atigi 10 kun ichida katta natijani ko'rdim. Endi tirnoqlarim toza va sog'lom!",
-    img1: "./Murod.svg",
+    img1: "/murod.png",
     img2: "./images/sale-cards-2-top.png",
   },
   {
     id: 3,
     name: "Fotima - 45 yosh",
     text: "Uzoq yillar davomida kurashdim. Dermozil boshqa sinab ko'rgan dorilarimdan farq qildi. Ta'siri tez va doimiy bo'ldi. Hammaga tavsiya qilaman.",
-    img1: "./saodat.svg",
+    img1: "/saodat.png",
     img2: "./images/sale-cards-3-top.png",
   },
   {
     id: 4,
     name: "Jasur - 35 yosh",
     text: "Sport bilan shug'ullanganim uchun tez-tez bu muammoga duch kelardim. Bu kremdan foydalanish oson va natijasi darhol seziladi. Endi profilaktika uchun ham qo'llayman.",
-    img1: "./comment.svg",
+    img1: "/dildora.png",
     img2: "./images/sale-cards-4-top.png",
   },
 ];
@@ -70,49 +70,47 @@ const mobileSwiperData = [
     id: 1,
     name: "Dildora - 32 yosh",
     text: "Meni anchadan beri bu muammo qiynab kelar edi. Har xil vositalarni qo‘llab ko‘rdim biroq foyda bermadi. Bir tanishim “Dermozil” kremini taklif qildi. Yana bir bor oyoq zamburug‘idan xalos bo‘lishga urinib ko‘dim. Bir haftadan so‘ng tirnoqlarim avvalgi sog‘lom ko‘rinishiga qaytdi. Natijadan juda xursandman. Ushbu mahsulotni tavsiya qilaman.",
-    img1: "/worth.svg",
-    img2: "/healt.svg",
+    img1: "/dildoraleft.png",
+    img2: "/dildoraright.png",
     img3: "/smile.svg",
-    img4: "/collapse_dermo.svg",
-    img5: "/flacon-dermo.svg",
+    img4: "/collapsedermozil.png",
+    img5: "/flacondermozil.png",
   },
   {
     id: 2,
     name: "Sarvar - 28 yosh",
     text: "Zamburug' sababli yozda ochiq poyabzal kiyishga uyalardim. Bu muammo ko'pdan beri bor edi. Dermozil kremni ishlatganimdan so'ng, atigi 10 kun ichida katta natijani ko'rdim. Oldin qancha dorilarni ishlatdim, foydasi bo'lmagandi. Endi tirnoqlarim toza va sog'lom. Men kabi muammoingiz bo'lsa, albatta sinab ko'ring.",
-    img1: "/MurodLeftLeg.svg",
-    img2: "/MurodLeftright.svg",
+    img1: "/murodleft.png",
+    img2: "/murodright.png",
     img3: "/smile.svg",
-    img4: "/collapse_dermo.svg",
-    img5: "/flacon-dermo.svg",
+    img4: "/collapsedermozil.png",
+    img5: "/flacondermozil.png",
   },
   {
     id: 3,
     name: "Fotima - 45 yosh",
     text: "Uzoq yillar davomida kurashdim, har xil usullarni qo'lladim, lekin faqatgina vaqtincha yordam berardi. Dermozil boshqa sinab ko'rgan dorilarimdan mutlaqo farq qildi. Ta'siri tez va doimiy bo'ldi. Nihoyat, oyoqlarim yengillashdi va estetik ko'rinishi yaxshilandi. Doimiy samarasi uchun hammaga tavsiya qilaman.",
-    img1: "/saodatLeftLeg.svg",
-    img2: "/saodatrightLeg.svg",
+    img1: "/saodatleft.png",
+    img2: "/saodatright.png",
     img3: "/smile.svg",
-    img4: "/collapse_dermo.svg",
-    img5: "/flacon-dermo.svg",
+    img4: "/collapsedermozil.png",
+    img5: "/flacondermozil.png",
   },
   {
     id: 4,
     name: "Jasur - 35 yosh",
     text: "Sport bilan shug'ullanganim uchun tez-tez bu muammoga duch kelardim. Oyoqlarimda qichishish va tirnoqlarimda o'zgarishlar sezilardi. Bu kremdan foydalanish oson va natijasi darhol seziladi. Avvalgilariga nisbatan ancha samarali ekan. Endi uni profilaktika uchun ham qo'llayman. Juda qoniqarli natija!",
-    img1: "/javohirLeft.svg",
-    img2: "/javohirRight.svg",
+    img1: "/javohirleft.png",
+    img2: "/javohirright.png",
     img3: "/smile.svg",
-    img4: "/collapse_dermo.svg",
-    img5: "/flacon-dermo.svg",
+    img4: "/collapsedermozil.png",
+    img5: "/flacondermozil.png",
   },
 ];
 
 const Swiper = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [mobileCurrentIndex, setMobileCurrentIndex] = useState(0);
-  // ✅ Harakat yo'nalishini saqlash uchun yangi state
-  // 1 = O'ngga siljish (Next), -1 = Chapga siljish (Prev)
   const [direction, setDirection] = useState(0);
 
   const totalMobileSlides = mobileSwiperData.length;
@@ -120,7 +118,6 @@ const Swiper = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
-  // ... (Desktop swiper uchun ref, controls, x, calculateWidth, useEffectlar o'zgarishsiz qoladi)
   const containerRef = useRef(null);
   const swiperControls = useAnimation();
   const x = useMotionValue(0);
@@ -196,9 +193,7 @@ const Swiper = () => {
     }
   };
 
-  // ✅ Animatsiya variantlari
   const slideVariants = {
-    // Chap tomondan kirib keladi (NEXT ga o'tish)
     enter: (direction) => ({
       x: direction > 0 ? "100%" : "-100%", // O'ngdan yoki chapdan kirib keladi
       opacity: 0,
@@ -267,7 +262,7 @@ const Swiper = () => {
         >
           {cardData.map((card) => (
             <motion.div key={card.uniqueId} className="sale__items">
-              <img
+              <motion.img
                 src={card.img1}
                 alt="Foydalanuvchi fikri fon rasmi"
                 className="sale__item-image"
@@ -276,12 +271,8 @@ const Swiper = () => {
           ))}
         </motion.div>
 
-        {/* ******************************************************* */}
-        {/* MOBILE SWIPER QISMI (FRAMER MOTION BILAN YANGILANDI) */}
-        {/* ******************************************************* */}
         <div className="mobile-swiper-container">
           <div className="swiper-wrapper">
-            {/* key qiymatini mobileCurrentIndex ga bog'lash, AnimatePresence uni animatsiya qilishini ta'minlaydi */}
             <AnimatePresence initial={false} custom={direction}>
               {mobileSwiperData.map(
                 (item, index) =>
@@ -303,10 +294,17 @@ const Swiper = () => {
                     >
                       <div className="mobile__wrapper">
                         <div className="mobile__top">
-                          {/* <img src={item.img3} className="smile" alt="Icon" /> */}
                           <div>
-                            <img src={item.img1} alt="Rasm 1" />
-                            <img src={item.img2} alt="Rasm 2" />
+                            <motion.img
+                              width={"70"}
+                              src={item.img1}
+                              alt="Rasm 1"
+                            />
+                            <motion.img
+                              width={"70"}
+                              src={item.img2}
+                              alt="Rasm 2"
+                            />
                           </div>
                         </div>
                         <div className="mobile__middle">
@@ -314,12 +312,14 @@ const Swiper = () => {
                           <p className="mobile__text">{item.text}</p>
                         </div>
                         <div className="mobile__bottom">
-                          <img
+                          <motion.img
+                            width={"100"}
                             className="collapse"
                             src={item.img4}
                             alt="Katta mahsulot"
                           />
-                          <img
+                          <motion.img
+                            width={"100"}
                             className="flacon"
                             src={item.img5}
                             alt="Flakon"

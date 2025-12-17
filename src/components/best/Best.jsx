@@ -1,27 +1,18 @@
 "use client";
-import React, { memo } from "react"; // ✅ memo import qilindi
+import React, { memo } from "react";
 import { motion } from "framer-motion";
 import "./best.scss";
 
-// --- ANIMATSIYA VARIANTLARI ---
-
-/**
- * Umumiy Konteyner (Ro'yxat elementlari uchun Stagger)
- */
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.2, // 0.3 dan 0.2 gacha qisqartirildi
+      delayChildren: 0.2,
       staggerChildren: 0.1,
     },
   },
 };
-
-/**
- * Ro'yxatdagi alohida elementlar uchun animatsiya
- */
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -35,9 +26,6 @@ const itemVariants = {
   },
 };
 
-/**
- * Rasm va SVG uchun Animatsiya (Chap qism)
- */
 const leftSideVariants = {
   hidden: { x: -100, opacity: 0 },
   visible: {
@@ -74,40 +62,38 @@ const Best = () => {
       </h2>
       <div className="best__bottom">
         <motion.div className="best__left" variants={leftSideVariants}>
-          <img
-            
+          <motion.img
             className="best__img"
-            src="./with.png"
+            src="/antileft.png"
             alt="Dermozil mahsuloti"
           />
 
           <motion.img
             className="best__svg"
-            src="/tree.svg"
+            src="/tree.png"
             alt="Dekorativ fon rasmi"
           />
         </motion.div>
 
         <motion.div className="best__right" variants={containerVariants}>
           <motion.div className="best__items" variants={itemVariants}>
-            <img src="./images/best-imgs-1.png" alt="Triklozan tarkibi" />
+            <motion.img src="/triklozan.png" alt="Triklozan tarkibi" />
             <p className="best__items-text">
-              Triklozan: Yallig‘lanishga qarshi, antibakterial va
-              zamburug‘larga qarshi xususiyatlarga ega
+              Triklozan: Yallig‘lanishga qarshi, antibakterial va zamburug‘larga
+              qarshi xususiyatlarga ega
             </p>
           </motion.div>
 
           <motion.div className="best__items" variants={itemVariants}>
-            <img src="./images/best-imgs-2.png" alt="D-pantenol tarkibi" />
+            <motion.img src="/pentenol.png" alt="D-pantenol tarkibi" />
             <p className="best__items-text">
-              D - pantenol: Tirnoq plastinkasini namlaydi va yumshatadi,
-              tirnoq atrofidagi terining ta’sirlanishi va quruqligini bartaraf
-              etadi
+              D - pantenol: Tirnoq plastinkasini namlaydi va yumshatadi, tirnoq
+              atrofidagi terining ta’sirlanishi va quruqligini bartaraf etadi
             </p>
           </motion.div>
 
           <motion.div className="best__items" variants={itemVariants}>
-            <img src="./images/best-imgs-3.png" alt="Mentol tarkibi" />
+            <motion.img src="/mentol.png" alt="Mentol tarkibi" />
             <p className="best__items-text">
               Mentol: Oyoqlardagi og‘irlik va charchoq hissini yo‘qotadi,
               tinchlantiruvchi ta’sirga ega
@@ -115,8 +101,8 @@ const Best = () => {
           </motion.div>
 
           <motion.div className="best__items" variants={itemVariants}>
-            <img
-              src="./images/best-imgs-4.png"
+            <motion.img
+              src="/moychechak.png"
               alt="Moychechak ekstrakti tarkibi"
             />
             <p className="best__items-text">
@@ -126,25 +112,22 @@ const Best = () => {
           </motion.div>
 
           <motion.div className="best__items" variants={itemVariants}>
-            <img
-              src="./images/best-imgs-5.png"
-              alt="Shalfey ekstrakti tarkibi"
-            />
+            <motion.img src="/shalfey.png" alt="Shalfey ekstrakti tarkibi" />
             <p className="best__items-text">
-              Shalfey ekstrakti: Ter bezlariga ta’sir qiladi, terlash
-              jarayonini sekinlashtiradi
+              Shalfey ekstrakti: Ter bezlariga ta’sir qiladi, terlash jarayonini
+              sekinlashtiradi
             </p>
           </motion.div>
 
           <motion.div className="best__items" variants={itemVariants}>
-            <img src="./images/best-imgs-6.png" alt="A vitamini tarkibi" />
+            <motion.img src="/avitaminol.png" alt="A vitamini tarkibi" />
             <p className="best__items-text">
               A vitamini: Quruqlik belgilari paydo bo‘lishining oldini oladi
             </p>
           </motion.div>
 
           <motion.div className="best__items" variants={itemVariants}>
-            <img src="./images/best-imgs-7.png" alt="E vitamini tarkibi" />
+            <motion.img src="/evitaminol.png" alt="E vitamini tarkibi" />
             <p className="best__items-text">
               E vitamini: Terining dag‘allashgan joylarini yumshatadi,
               tirnoqlarni oziqlantiradi va tiklaydi

@@ -62,7 +62,12 @@ const Header = () => {
         initial="hidden"
         animate="visible"
       >
-        <img className="navbar__logo" src="/images/logo.png" alt="logo" />
+        <motion.img
+          width={"150"}
+          className="navbar__logo"
+          src="/logo.png"
+          alt="logo"
+        />
         <div className="navbar__right">
           <div
             className="navbar__box"
@@ -90,7 +95,7 @@ const Header = () => {
           <motion.img
             className="intro__img intro__img-1"
             width="80%"
-            src="/leftLeg.svg"
+            src="/leftintroleg.png"
             alt="Chap rasm"
             variants={scrollInVariants}
             initial="hidden"
@@ -99,7 +104,7 @@ const Header = () => {
           <div className="intro__center-imgs">
             <motion.img
               className="intro__img1"
-              src="/maz-dermozil.svg"
+              src="/introcrem.png"
               alt="Markaziy rasm 1"
               variants={scrollInVariants}
               initial="hidden"
@@ -108,7 +113,7 @@ const Header = () => {
             />
             <motion.img
               className="intro__img2"
-              src="/Dermozil-box.svg"
+              src="/introcard.png"
               alt="Markaziy rasm 2"
               variants={scrollInVariants}
               initial="hidden"
@@ -117,7 +122,7 @@ const Header = () => {
             />
             <motion.img
               className="intro__img3"
-              src="/prize.dermozil.svg"
+              src="/introflacon.png"
               alt="Markaziy rasm 3"
               variants={scrollInVariants}
               initial="hidden"
@@ -128,7 +133,7 @@ const Header = () => {
           <motion.img
             className="intro__img intro__img-2"
             width="80%"
-            src="/rightLeg.svg"
+            src="/introrightleg.png"
             alt="O'ng rasm"
             variants={scrollInVariants}
             initial="hidden"

@@ -172,7 +172,17 @@ const OrderForm = ({ onCloseModal }) => {
 
         <div className="order-content">
           <div className="products-image">
-            <img src="/images/header-center-1.png" alt="Dermozil kremlari" />
+            <motion.img
+              className="order-images"
+              width={"400"}
+              src="/introcrem.png"
+              alt="Dermozil kremlari"
+            />
+            <motion.img
+              width={"400"}
+              src="/introcard.png"
+              alt="Dermozil kremlari"
+            />
           </div>
 
           <form onSubmit={handleSubmit} className="order-form">
@@ -229,7 +239,7 @@ const OrderForm = ({ onCloseModal }) => {
 
           <div className="gift-box">
             <div className="tag">SOV'G'A</div>
-            <img src="/images/header-center-3.png" alt="Sovg'a" />
+            <motion.img width={"200"} src="/introflacon.png" alt="Sovg'a" />
           </div>
         </div>
       </motion.section>

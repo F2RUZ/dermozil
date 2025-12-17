@@ -20,7 +20,12 @@
 
   &__img {
     position: absolute;
-    width: 70%;
+    width: 350px;
+  }
+
+  &__svg {
+    // width: 100%;
+    width: 500px;
   }
 
   &__right {
@@ -46,6 +51,7 @@
     & img {
       position: relative;
       right: 30px;
+      width: 65px;
     }
   }
 
@@ -86,7 +92,8 @@
     }
 
     &__svg {
-      width: 100%;
+      // width: 100%;
+      width: 500px;
       opacity: 0.3;
     }
   }
