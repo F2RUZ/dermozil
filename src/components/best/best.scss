@@ -98,3 +98,11 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .best {
+    &__svg {
+      width: 100%;
+    }
+  }
+}

@@ -139,4 +139,4 @@ const Best = () => {
   );
 };
 
-export default memo(Best);
+export default Best;
