@@ -110,19 +110,24 @@ const OrderForm = ({ onCloseModal }) => {
       );
 
       if (response.ok) {
+        // MUVAFFARIYATLI HOLAT
         setIsSuccess(true);
+        showNotice("Muvaffaqiyatli! Operatorimiz tez orada bog'lanadi.");
         setName("");
         setPhone("");
 
+        // 3 sekunddan keyin modalni yopish
         setTimeout(() => {
           setIsSuccess(false);
-          if (onCloseModal) onCloseModal();
-        }, 5000);
+          if (onCloseModal) {
+            onCloseModal(); // Bu funksiya modalni yopadi
+          }
+        }, 3500);
       } else {
-        throw new Error("Server error");
+        showNotice("Xatolik! Ma'lumot yuborishda muammo bo'ldi.");
       }
     } catch (error) {
-      showNotice("Xatolik yuz berdi! Server bilan bog'lanib bo'lmadi.");
+      showNotice("Server bilan aloqa uzildi. Internetni tekshiring.");
     } finally {
       setIsLoading(false);
     }
@@ -130,6 +135,7 @@ const OrderForm = ({ onCloseModal }) => {
 
   return (
     <>
+      {/* Snackbar har doim eng tepada ko'rinishi uchun */}
       <Snackbar
         isVisible={snackbar.isVisible}
         message={snackbar.message}
@@ -174,6 +180,7 @@ const OrderForm = ({ onCloseModal }) => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Ismingiz"
+                autoComplete="off"
                 required
               />
             </motion.div>
@@ -198,8 +205,8 @@ const OrderForm = ({ onCloseModal }) => {
                 type="submit"
                 className="intro__button often__form-button"
                 disabled={isLoading}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {isLoading ? "Yuborilmoqda..." : "Buyurtma berish"}
               </motion.button>
